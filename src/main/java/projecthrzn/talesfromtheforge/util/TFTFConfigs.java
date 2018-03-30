@@ -4,7 +4,7 @@ import net.minecraftforge.common.config.Config;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
 public class TFTFConfigs {
-    public static void postInit(FMLPostInitializationEvent event){
+    public static void postInit(FMLPostInitializationEvent event) {
     }
 
     @Config(modid = TFTFConstants.MODID)

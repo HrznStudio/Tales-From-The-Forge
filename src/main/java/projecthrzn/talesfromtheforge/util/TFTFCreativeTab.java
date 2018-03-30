@@ -4,7 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-public class TFTFCreativeTab extends CreativeTabs{
+public class TFTFCreativeTab extends CreativeTabs {
 
     public TFTFCreativeTab() {
         super(TFTFConstants.MODID);
@@ -12,7 +12,7 @@ public class TFTFCreativeTab extends CreativeTabs{
     }
 
     @Override
-    public boolean hasSearchBar(){
+    public boolean hasSearchBar() {
         return true;
     }
 

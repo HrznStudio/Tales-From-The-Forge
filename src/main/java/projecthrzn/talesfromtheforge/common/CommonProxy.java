@@ -15,16 +15,16 @@ import static projecthrzn.talesfromtheforge.TalesFromTheForge.logger;
 public class CommonProxy {
 
     @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event){
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
 
     }
 
     @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event){
+    public static void registerItems(RegistryEvent.Register<Item> event) {
 
     }
 
-    public void preInit(FMLPreInitializationEvent e){
+    public void preInit(FMLPreInitializationEvent e) {
         logger.log(Level.INFO, "TFTF: Is Loading During Pre-Init");
     }
 
@@ -32,11 +32,11 @@ public class CommonProxy {
         logger.log(Level.INFO, "TFTF: Is Loading During Init");
     }
 
-    public void postInit(FMLPostInitializationEvent e){
+    public void postInit(FMLPostInitializationEvent e) {
         logger.log(Level.INFO, "TFTF: Is Loading During Post-Init");
     }
 
-    public void serverStart(FMLServerStartingEvent e){
+    public void serverStart(FMLServerStartingEvent e) {
         logger.log(Level.INFO, "TFTF: Is Loading During Server Start");
     }
 }

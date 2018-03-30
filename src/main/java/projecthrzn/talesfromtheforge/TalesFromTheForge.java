@@ -1,6 +1,5 @@
 package projecthrzn.talesfromtheforge;
 
-import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -15,12 +14,9 @@ import projecthrzn.talesfromtheforge.util.TFTFConstants;
 
 @Mod(modid = TFTFConstants.MODID, name = TFTFConstants.NAME, version = TFTFConstants.VERSION, dependencies = TFTFConstants.DEPS, acceptedMinecraftVersions = TFTFConstants.MCVERS)
 public class TalesFromTheForge {
+
     @SidedProxy(clientSide = TFTFConstants.CLIENTPROXY, serverSide = TFTFConstants.COMMONPROXY, modId = TFTFConstants.MODID)
     public static CommonProxy proxy;
-
-    @Mod.Instance
-    public static TalesFromTheForge instance;
-
     public static Logger logger;
 
     @EventHandler
@@ -35,13 +31,13 @@ public class TalesFromTheForge {
     }
 
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event){
+    public void postInit(FMLPostInitializationEvent event) {
         TFTFConfigs.postInit(event);
         proxy.postInit(event);
     }
 
     @EventHandler
-    public void serverStart(FMLServerStartingEvent event){
+    public void serverStart(FMLServerStartingEvent event) {
         proxy.serverStart(event);
     }
 }
