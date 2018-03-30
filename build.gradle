@@ -11,20 +11,20 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "1.0"
-group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = modVersion
+group = modGroup
+archivesBaseName = modBaseName
+sourceCompatibility = targetCompatibility = '1.8'
 
-sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
     sourceCompatibility = targetCompatibility = '1.8'
 }
 
 minecraft {
-    version = "1.12.2-14.23.2.2640"
+    version = project.forgeVersion
     runDir = "run"
-    mappings = "snapshot_20171003"
-
+    mappings = project.mcpVersion
+    useDepAts = true
 }
 
 repositories {
