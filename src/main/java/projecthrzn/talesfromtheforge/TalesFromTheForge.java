@@ -19,6 +19,5 @@ public class TalesFromTheForge {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        
     }
 }
