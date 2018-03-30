@@ -3,6 +3,12 @@ package projecthrzn.talesfromtheforge.util;
 import java.util.Random;
 
 public class TFTFConstants {
+
+    // Proxy Constants
+    public static final String COMMONPROXY = "projecthrzn.talesfromtheforge.common.CommonProxy";
+    public static final String CLIENTPROXY = "projecthrzn.talesfromtheforge.client.ClientProxy";
+
+    // Mod Constants
     public static final String MODID = "talesfromtheforge";
     public static final String NAME = "Tales From The Forge";
     public static final String VERSION = "1.12.2-1.0.0";
