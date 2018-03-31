@@ -62,8 +62,8 @@ public class TFTFItems {
         HAMMER_HEAD = new Part("hammer_head", Amounts.INGOT.getAmount(2));
         ONE_HANDED_GUARD = new Part("one_handed_guard", Amounts.INGOT.getAmount(1));
         TWO_HANDED_GUARD = new Part("two_handed_guard", Amounts.INGOT.getAmount(1));
-        ONE_HANDED_GRIP = new PartGrip("one_handed_grip", Amounts.INGOT.getAmount(1));
-        TWO_HANDED_GRIP = new PartGrip("two_handed_grip", Amounts.INGOT.getAmount(1));
+        ONE_HANDED_GRIP = new PartGrip("one_handed_grip", Amounts.INGOT.getAmount(2));
+        TWO_HANDED_GRIP = new PartGrip("two_handed_grip", Amounts.INGOT.getAmount(3));
         LARGE_HAMMER_HEAD = new PartGrip("large_hammer_head", Amounts.INGOT.getAmount(4));
 
         PICKAXE = new Tool("pickaxe", PICK_HEAD, TWO_HANDED_GRIP);
@@ -90,6 +90,8 @@ public class TFTFItems {
                 TWO_HANDED_GUARD,
                 ONE_HANDED_GRIP,
                 TWO_HANDED_GRIP,
+                HAMMER_HEAD,
+                LARGE_HAMMER_HEAD,
 
                 PICKAXE,
                 SHOVEL,

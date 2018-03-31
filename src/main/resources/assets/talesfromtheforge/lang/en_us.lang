@@ -13,12 +13,24 @@ material.gold.name=Gold
 type.ingot.name=Ingot
 type.nugget.name=Nugget
 
-type.grip.one_handed.name=One-Handed Grip
-type.grip.two_handed.name=Two-Handed Grip
+type.one_handed_grip.name=One-Handed Grip
+type.two_handed_grip.name=Two-Handed Grip
+type.one_handed_guard.name=Two-Handed Guard
+type.two_handed_guard.name=Two-Handed Guard
+
 
 type.pick_head.name=Pickaxe Head
 type.shovel_head.name=Shovel Head
 type.axe_head.name=Axe Head
-type.sword_blade.name=Sword Blade
+type.long_blade.name=Longsword Blade
+type.short_blade.name=Short Blade
+type.hammer_head.name=Hammer Head
+type.large_hammer_head.name=Large Hammer Head
 
 type.pickaxe.name=Pickaxe
+type.axe.name=Axe
+type.shovel.name=Shovel
+type.hammer.name=Hammer
+type.dagger.name=Dagger
+type.longsword.name=Longsword
+type.great_hammer.name=Great-Hammer
