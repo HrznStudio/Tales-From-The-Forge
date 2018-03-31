@@ -5,9 +5,10 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public enum GripType implements IStringSerializable {
+public enum GripType implements IStringSerializable{
     ONE_HANDED,
-    TWO_HANDED;
+    TWO_HANDED,
+    ;
 
     public static final GripType[] ENABLED = values();
 
