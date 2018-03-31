@@ -14,6 +14,7 @@ public class TFTFConfigs {
         public static Modules modules;
         public static Features features;
         public static Compat compat;
+        public static OreGen oreGen;
 
         public static class Debug {
             @Comment("[Default: False]: Should Debug Features Be Enabled?")
