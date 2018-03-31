@@ -16,9 +16,16 @@ import projecthrzn.talesfromtheforge.common.tool.Part;
 import projecthrzn.talesfromtheforge.common.tool.Tool;
 import projecthrzn.talesfromtheforge.util.Amounts;
 import projecthrzn.talesfromtheforge.util.TFTFConfigs;
+import projecthrzn.talesfromtheforge.util.TFTFConfigs.TFTFConfig;
 
 @Mod.EventBusSubscriber
 public class TFTFItems {
+
+    public static ItemBase rawOreLumpCasserite = new ItemBase("rawOreLump_Casserite");
+    public static ItemBase rawOreLumpChalcopyrite = new ItemBase("rawOreLump_Chalcopyrite");
+    public static ItemBase rawOreLumpDigenite = new ItemBase("rawOreLump_Digenite");
+    public static ItemBase rawOreLumpGalena = new ItemBase("rawOreLump_Galena");
+    public static ItemBase rawOreLumpSphalerite = new ItemBase("rawOreLump_Sphalerite");
 
     public static MaterialItem INGOT;
     public static MaterialItem NUGGET;
@@ -92,7 +99,28 @@ public class TFTFItems {
                 HAMMER,
                 GREAT_HAMMER
         );
-        if (TFTFConfigs.TFTFConfig.Features.disableVanilla) {
+
+        if (TFTFConfig.OreGen.Cassiterite.shouldGenerate){
+            event.getRegistry().register(rawOreLumpCasserite);
+        }
+
+        if (TFTFConfig.OreGen.Chalcopyrite.shouldGenerate){
+            event.getRegistry().register(rawOreLumpChalcopyrite);
+        }
+
+        if (TFTFConfig.OreGen.Digenite.shouldGenerate){
+            event.getRegistry().register(rawOreLumpDigenite);
+        }
+
+        if (TFTFConfig.OreGen.Galena.shouldGenerate) {
+            event.getRegistry().register(rawOreLumpGalena);
+        }
+
+        if (TFTFConfig.OreGen.Sphalerite.shouldGenerate) {
+            event.getRegistry().register(rawOreLumpSphalerite);
+        }
+
+        if (TFTFConfig.Features.disableVanilla) {
             event.getRegistry().registerAll(
                     new DeprecatedItemOverride(Items.GOLD_INGOT),
                     new DeprecatedItemOverride(Items.IRON_INGOT),

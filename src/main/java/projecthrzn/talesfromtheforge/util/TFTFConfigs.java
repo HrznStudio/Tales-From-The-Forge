@@ -2,6 +2,7 @@ package projecthrzn.talesfromtheforge.util;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.Config.Comment;
+import net.minecraftforge.common.config.Config.RangeInt;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
 public class TFTFConfigs {
@@ -50,7 +51,7 @@ public class TFTFConfigs {
 
         public static class OreGen {
 
-            public static Generation Calcopyrite = new Generation();
+            public static Generation Chalcopyrite = new Generation();
             public static Generation Cassiterite = new Generation();
             public static Generation Digenite = new Generation();
             public static Generation Galena = new Generation();
@@ -60,10 +61,10 @@ public class TFTFConfigs {
                 @Comment("[Default: True]: Should this ore Spawn?")
                 public boolean shouldGenerate = true;
                 @Comment("[Default: 16]: Minimum Y level")
-                @Config.RangeInt(min = 0, max = 255)
+                @RangeInt(min = 0, max = 255)
                 public int minY = 16;
                 @Comment("[Default: 32]: Maximum Y level")
-                @Config.RangeInt(min = 0, max = 255)
+                @RangeInt(min = 0, max = 255)
                 public int maxY = 32;
                 @Comment("[Default: 8]")
                 public int veinSize = 8;
