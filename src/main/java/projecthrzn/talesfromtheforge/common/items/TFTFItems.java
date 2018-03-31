@@ -1,6 +1,7 @@
 package projecthrzn.talesfromtheforge.common.items;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -9,6 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import projecthrzn.talesfromtheforge.TalesFromTheForge;
 import projecthrzn.talesfromtheforge.common.Material;
 import projecthrzn.talesfromtheforge.common.MaterialRegistry;
 import projecthrzn.talesfromtheforge.common.tool.MaterialItem;
@@ -20,11 +22,13 @@ import projecthrzn.talesfromtheforge.util.TFTFConfigs.TFTFConfig;
 @Mod.EventBusSubscriber
 public class TFTFItems {
 
-    public static ItemBase rawOreLumpCasserite = new ItemBase("rawOreLump_Casserite");
-    public static ItemBase rawOreLumpChalcopyrite = new ItemBase("rawOreLump_Chalcopyrite");
-    public static ItemBase rawOreLumpDigenite = new ItemBase("rawOreLump_Digenite");
-    public static ItemBase rawOreLumpGalena = new ItemBase("rawOreLump_Galena");
-    public static ItemBase rawOreLumpSphalerite = new ItemBase("rawOreLump_Sphalerite");
+    public static CreativeTabs tab = TalesFromTheForge.TAB;
+
+    public static ItemBase rawOreLumpCasserite = new ItemBase("rawOreLump_Casserite").setCreativeTab(tab);
+    public static ItemBase rawOreLumpChalcopyrite = new ItemBase("rawOreLump_Chalcopyrite").setCreativeTab(tab);
+    public static ItemBase rawOreLumpDigenite = new ItemBase("rawOreLump_Digenite").setCreativeTab(tab);
+    public static ItemBase rawOreLumpGalena = new ItemBase("rawOreLump_Galena").setCreativeTab(tab);
+    public static ItemBase rawOreLumpSphalerite = new ItemBase("rawOreLump_Sphalerite").setCreativeTab(tab);
 
     public static MaterialItem INGOT;
     public static MaterialItem NUGGET;
@@ -101,25 +105,11 @@ public class TFTFItems {
                 GREAT_HAMMER
         );
 
-        if (TFTFConfig.OreGen.Cassiterite.shouldGenerate) {
-            event.getRegistry().register(rawOreLumpCasserite);
-        }
-
-        if (TFTFConfig.OreGen.Chalcopyrite.shouldGenerate) {
-            event.getRegistry().register(rawOreLumpChalcopyrite);
-        }
-
-        if (TFTFConfig.OreGen.Digenite.shouldGenerate) {
-            event.getRegistry().register(rawOreLumpDigenite);
-        }
-
-        if (TFTFConfig.OreGen.Galena.shouldGenerate) {
-            event.getRegistry().register(rawOreLumpGalena);
-        }
-
-        if (TFTFConfig.OreGen.Sphalerite.shouldGenerate) {
-            event.getRegistry().register(rawOreLumpSphalerite);
-        }
+        event.getRegistry().register(rawOreLumpCasserite);
+        event.getRegistry().register(rawOreLumpChalcopyrite);
+        event.getRegistry().register(rawOreLumpDigenite);
+        event.getRegistry().register(rawOreLumpGalena);
+        event.getRegistry().register(rawOreLumpSphalerite);
 
         if (TFTFConfig.Features.disableVanilla) {
             event.getRegistry().registerAll(

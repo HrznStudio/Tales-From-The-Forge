@@ -1,4 +1,3 @@
-
 itemGroup.talesfromtheforge=Tales From The Forge
 
 material.wood.name=Wooden
@@ -9,6 +8,12 @@ material.bronze.name=Bronze
 material.iron.name=Iron
 material.silver.name=Silver
 material.gold.name=Gold
+
+tile.talesfromtheforge.ore_cassiterite.name=Cassiterite Ore
+tile.talesfromtheforge.ore_chalcopyrite.name=Chalcopyrite Ore
+tile.talesfromtheforge.ore_digenite.name=Digenite Ore
+tile.talesfromtheforge.ore_galena.name=Galena Ore
+tile.talesfromtheforge.ore_sphalerite.name=Sphalerite Ore
 
 type.ingot.name=Ingot
 type.nugget.name=Nugget
