@@ -1,7 +1,6 @@
 package projecthrzn.talesfromtheforge.common.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;

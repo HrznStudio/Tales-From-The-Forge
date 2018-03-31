@@ -1,6 +1,9 @@
 
 itemGroup.talesfromtheforge=Tales From The Forge
 
+material.wood.name=Wooden
+material.stone.name=Stone
+material.flint.name=Flint
 material.copper.name=Copper
 material.bronze.name=Bronze
 material.iron.name=Iron

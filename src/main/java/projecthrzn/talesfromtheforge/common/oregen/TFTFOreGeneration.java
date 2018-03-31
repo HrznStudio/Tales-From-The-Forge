@@ -21,20 +21,20 @@ public class TFTFOreGeneration implements IWorldGenerator {
     }
 
     private void Overworld(Random random, int chunkX, int chunkY, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider){
-        if (OreGen.Calcopyrite){
-            generateOre(TFTFBlocks.oreChalcopyrite, world, random, chunkX * 16, chunkY * 16, OreGen.calcopyriteMinY, OreGen.calcopyriteMaxY, OreGen.calcopyriteVeinSize, OreGen.calcopyriteChances);
+        if (OreGen.Calcopyrite.shouldGenerate){
+            generateOre(TFTFBlocks.oreChalcopyrite, world, random, chunkX * 16, chunkY * 16, OreGen.Calcopyrite.minY, OreGen.Calcopyrite.maxY, OreGen.Calcopyrite.veinSize, OreGen.Calcopyrite.Chance);
         }
-        if (OreGen.Cassiterite){
-            generateOre(TFTFBlocks.oreCassiterite, world, random, chunkX * 16, chunkY * 16, OreGen.cassiteriteMinY, OreGen.cassiteriteMaxY, OreGen.cassiteriteVeinSize, OreGen.cassiteriteChances);
+        if (OreGen.Cassiterite.shouldGenerate){
+            generateOre(TFTFBlocks.oreCassiterite, world, random, chunkX * 16, chunkY * 16, OreGen.Cassiterite.minY, OreGen.Cassiterite.maxY, OreGen.Cassiterite.veinSize, OreGen.Cassiterite.Chance);
         }
-        if (OreGen.Digenite){
-            generateOre(TFTFBlocks.oreDigenite, world, random, chunkX * 16, chunkY * 16, OreGen.digeniteMinY, OreGen.digeniteMaxY, OreGen.digeniteVeinSize, OreGen.digeniteChances);
+        if (OreGen.Digenite.shouldGenerate){
+            generateOre(TFTFBlocks.oreDigenite, world, random, chunkX * 16, chunkY * 16, OreGen.Digenite.minY, OreGen.Digenite.maxY, OreGen.Digenite.veinSize, OreGen.Digenite.Chance);
         }
-        if (OreGen.Galena){
-            generateOre(TFTFBlocks.oreGalena, world, random, chunkX * 16, chunkY * 16, OreGen.galenaMinY, OreGen.galenaMaxY, OreGen.galenaVeinSize, OreGen.galenaChances);
+        if (OreGen.Galena.shouldGenerate){
+            generateOre(TFTFBlocks.oreGalena, world, random, chunkX * 16, chunkY * 16, OreGen.Galena.minY, OreGen.Galena.maxY, OreGen.Galena.veinSize, OreGen.Galena.Chance);
         }
-        if (OreGen.Sphalerite){
-            generateOre(TFTFBlocks.oreSphalerite, world, random, chunkX * 16, chunkY * 16, OreGen.sphaleriteMinY, OreGen.sphaleriteMaxY, OreGen.sphaleriteVeinSize, OreGen.sphaleriteChances);
+        if (OreGen.Sphalerite.shouldGenerate){
+            generateOre(TFTFBlocks.oreSphalerite, world, random, chunkX * 16, chunkY * 16, OreGen.Sphalerite.minY, OreGen.Sphalerite.maxY, OreGen.Sphalerite.veinSize, OreGen.Sphalerite.Chance);
         }
 
     }
