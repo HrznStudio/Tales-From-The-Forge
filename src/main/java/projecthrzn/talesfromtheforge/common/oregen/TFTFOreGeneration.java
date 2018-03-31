@@ -21,8 +21,8 @@ public class TFTFOreGeneration implements IWorldGenerator {
     }
 
     private void Overworld(Random random, int chunkX, int chunkY, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        if (OreGen.Calcopyrite.shouldGenerate) {
-            generateOre(TFTFBlocks.oreChalcopyrite, world, random, chunkX * 16, chunkY * 16, OreGen.Calcopyrite.minY, OreGen.Calcopyrite.maxY, OreGen.Calcopyrite.veinSize, OreGen.Calcopyrite.Chance);
+        if (OreGen.Chalcopyrite.shouldGenerate) {
+            generateOre(TFTFBlocks.oreChalcopyrite, world, random, chunkX * 16, chunkY * 16, OreGen.Chalcopyrite.minY, OreGen.Chalcopyrite.maxY, OreGen.Chalcopyrite.veinSize, OreGen.Chalcopyrite.Chance);
         }
         if (OreGen.Cassiterite.shouldGenerate) {
             generateOre(TFTFBlocks.oreCassiterite, world, random, chunkX * 16, chunkY * 16, OreGen.Cassiterite.minY, OreGen.Cassiterite.maxY, OreGen.Cassiterite.veinSize, OreGen.Cassiterite.Chance);
