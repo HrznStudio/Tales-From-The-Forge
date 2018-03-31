@@ -8,6 +8,7 @@ import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
@@ -36,6 +37,16 @@ public class Tool extends Item {
     }
 
     @Override
+    public String getItemStackDisplayName(ItemStack stack) {
+        return super.getItemStackDisplayName(stack);
+    }
+
+    @Override
+    public String getUnlocalizedName(ItemStack stack) {
+        return "type." + name;
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
@@ -47,8 +58,7 @@ public class Tool extends Item {
                     ItemStack part = new ItemStack((NBTTagCompound) base);
                     if (!(part.getItem() instanceof Part))
                         continue;
-                    tooltip.add("Part: " + part.getItem().getItemStackDisplayName(part));
-                    tooltip.add(" - Material: " + ((IPart) part.getItem()).getMaterial(part).getDisplayName());
+                    tooltip.add(TextFormatting.WHITE + part.getItem().getItemStackDisplayName(part));
                 }
             }
         }
