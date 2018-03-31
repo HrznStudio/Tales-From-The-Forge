@@ -83,6 +83,8 @@ public class TFTFItems {
                 TWO_HANDED_GUARD,
                 ONE_HANDED_GRIP,
                 TWO_HANDED_GRIP,
+                HAMMER_HEAD,
+                LARGE_HAMMER_HEAD,
 
                 PICKAXE,
                 SHOVEL,
