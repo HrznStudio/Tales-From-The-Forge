@@ -6,5 +6,8 @@ import projecthrzn.talesfromtheforge.common.Material;
 public interface IMaterialItem {
 
     boolean canBeMaterial(Material material);
+
     ItemStack getStack(Material material);
+
+    Material getMaterial(ItemStack stack);
 }

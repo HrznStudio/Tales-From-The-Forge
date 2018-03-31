@@ -41,8 +41,9 @@ public class Tool extends Item {
         if (compound.hasKey(Tags.PARTS, Constants.NBT.TAG_LIST)) {
             for (NBTBase base : compound.getTagList(Tags.PARTS, Constants.NBT.TAG_COMPOUND)) {
                 if (base instanceof NBTTagCompound) {
-                    tooltip.add("Part id: " + ((NBTTagCompound) base).getString(Tags.PARTID));
-                    tooltip.add(" - Material: " + MaterialRegistry.getMaterial(((NBTTagCompound) base).getString(Tags.MATERIAL)));
+                    ItemStack part = new ItemStack((NBTTagCompound) base);
+                    tooltip.add("Part: " + part.getItem().getItemStackDisplayName(part));
+                    tooltip.add(" - Material: " + ((IPart) part.getItem()).getMaterial(part).getDisplayName());
                 }
             }
         }
@@ -56,7 +57,7 @@ public class Tool extends Item {
             compound.setTag(Tags.PARTS, new NBTTagList());
         }
         NBTTagList list = compound.getTagList(Tags.PARTS, Constants.NBT.TAG_COMPOUND);
-        list.appendTag(part.getTagCompound().copy());
+        list.appendTag(part.writeToNBT(new NBTTagCompound()));
     }
 
     public ItemStack getStack(ItemStack... parts) {

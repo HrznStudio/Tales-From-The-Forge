@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import projecthrzn.talesfromtheforge.common.GripType;
 import projecthrzn.talesfromtheforge.common.Material;
 import projecthrzn.talesfromtheforge.common.MaterialRegistry;
 import projecthrzn.talesfromtheforge.common.tool.MaterialItem;
@@ -30,6 +29,7 @@ public class TFTFItems {
     public static Part SHORT_BLADE;
     public static Part LONG_BLADE;
     public static Part HAMMER_HEAD;
+    public static Part LARGE_HAMMER_HEAD;
     public static Part ONE_HANDED_GUARD;
     public static Part TWO_HANDED_GUARD;
     public static Part ONE_HANDED_GRIP;
@@ -52,11 +52,12 @@ public class TFTFItems {
         AXE_HEAD = new Part("axe_head", Amounts.INGOT.getAmount(3));
         SHORT_BLADE = new Part("short_blade", Amounts.INGOT.getAmount(1));
         LONG_BLADE = new Part("long_blade", Amounts.INGOT.getAmount(2));
-        HAMMER_HEAD = new Part("hammer_head", Amounts.INGOT.getAmount(4));
+        HAMMER_HEAD = new Part("hammer_head", Amounts.INGOT.getAmount(2));
         ONE_HANDED_GUARD = new Part("one_handed_guard", Amounts.INGOT.getAmount(1));
         TWO_HANDED_GUARD = new Part("two_handed_guard", Amounts.INGOT.getAmount(1));
-        ONE_HANDED_GRIP = new Part("one_handed_grip", Amounts.INGOT.getAmount(1));
-        TWO_HANDED_GRIP = new Part("two_handed_grip", Amounts.INGOT.getAmount(1));
+        ONE_HANDED_GRIP = new PartGrip("one_handed_grip", Amounts.INGOT.getAmount(1));
+        TWO_HANDED_GRIP = new PartGrip("two_handed_grip", Amounts.INGOT.getAmount(1));
+        LARGE_HAMMER_HEAD = new PartGrip("large_hammer_head", Amounts.INGOT.getAmount(4));
 
         PICKAXE = new Tool("pickaxe", PICK_HEAD, TWO_HANDED_GRIP);
         SHOVEL = new Tool("shovel", SHOVEL_HEAD, TWO_HANDED_GRIP);
@@ -64,7 +65,7 @@ public class TFTFItems {
         DAGGER = new Tool("dagger", LONG_BLADE, ONE_HANDED_GUARD, ONE_HANDED_GRIP);
         LONGSWORD = new Tool("longsword", LONG_BLADE, TWO_HANDED_GUARD, TWO_HANDED_GRIP);
         HAMMER = new Tool("hammer", HAMMER_HEAD, ONE_HANDED_GRIP);
-        GREAT_HAMMER = new Tool("great_hammer", HAMMER_HEAD, ONE_HANDED_GRIP);
+        GREAT_HAMMER = new Tool("great_hammer", LARGE_HAMMER_HEAD, TWO_HANDED_GRIP);
     }
 
     @SubscribeEvent
