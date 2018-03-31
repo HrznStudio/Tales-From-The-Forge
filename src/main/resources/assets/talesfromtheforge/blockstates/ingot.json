@@ -1,0 +1,39 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated",
+    "textures": {
+      "layer0": "blocks/dirt"
+    },
+    "transform": "forge:default-item"
+  },
+  "variants": {
+    "type": {
+      "copper": {
+        "textures": {
+          "layer0": "talesfromtheforge:items/ingot_copper"
+        }
+      },
+      "bronze": {
+        "textures": {
+          "layer0": "talesfromtheforge:items/ingot_bronze"
+        }
+      },
+      "iron": {
+        "textures": {
+          "layer0": "talesfromtheforge:items/ingot_iron"
+        }
+      },
+      "silver": {
+        "textures": {
+          "layer0": "talesfromtheforge:items/ingot_silver"
+        }
+      },
+      "gold": {
+        "textures": {
+          "layer0": "talesfromtheforge:items/ingot_gold"
+        }
+      }
+    }
+  }
+}

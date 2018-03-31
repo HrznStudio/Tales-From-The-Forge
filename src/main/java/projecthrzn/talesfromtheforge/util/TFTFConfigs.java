@@ -36,7 +36,10 @@ public class TFTFConfigs {
         }
 
         public static class Features {
-
+            @Comment("[Default: True]: Should TFTF disable vanilla tools and materials")
+            public static boolean disableVanilla = true;
+            @Comment("[Default: True]: Should TFTF disable vanilla recipes")
+            public static boolean disableVanillaRecipes = true;
         }
 
         public static class Compat {

@@ -1,0 +1,13 @@
+
+itemGroup.talesfromtheforge=Tales From The Forge
+
+material.copper.name=Copper
+material.bronze.name=Bronze
+material.iron.name=Iron
+material.silver.name=Silver
+material.gold.name=Gold
+
+type.ingot.name=Ingot
+type.nugget.name=Nugget
+
+type.pickaxe.name=Pickaxe

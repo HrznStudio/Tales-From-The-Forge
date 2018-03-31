@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.Level;
-import projecthrzn.talesfromtheforge.util.TFTFConfigs;
 import projecthrzn.talesfromtheforge.util.TFTFConfigs.TFTFConfig;
 
 import static projecthrzn.talesfromtheforge.TalesFromTheForge.logger;
@@ -27,25 +26,25 @@ public class CommonProxy {
     }
 
     public void preInit(FMLPreInitializationEvent e) {
-        if (TFTFConfig.Debug.debug){
+        if (TFTFConfig.Debug.debug) {
             logger.log(Level.DEBUG, "TFTF: Is Loading During Pre-Init");
         }
     }
 
     public void Init(FMLInitializationEvent e) {
-        if (TFTFConfig.Debug.debug){
+        if (TFTFConfig.Debug.debug) {
             logger.log(Level.DEBUG, "TFTF: Is Loading During Init");
         }
     }
 
     public void postInit(FMLPostInitializationEvent e) {
-        if (TFTFConfig.Debug.debug){
+        if (TFTFConfig.Debug.debug) {
             logger.log(Level.DEBUG, "TFTF: Is Loading During Post-Init");
         }
     }
 
     public void serverStart(FMLServerStartingEvent e) {
-        if (TFTFConfig.Debug.debug){
+        if (TFTFConfig.Debug.debug) {
             logger.log(Level.DEBUG, "TFTF: Is Loading During Server Start");
         }
     }
