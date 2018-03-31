@@ -10,13 +10,9 @@ public enum Material implements IStringSerializable {
     BRONZE,
     IRON,
     SILVER,
-    GOLD,;
+    GOLD;
 
-    public static final Material[] ENABLED = values();
-
-    public static Material ofKey(int meta) {
-        return ENABLED[meta % ENABLED.length];
-    }
+    static final Material[] ENABLED = values();
 
     @SideOnly(Side.CLIENT)
     public String getDisplayName() {
@@ -30,5 +26,9 @@ public enum Material implements IStringSerializable {
 
     public int meta() {
         return ordinal();
+    }
+
+    public double getMeltingPoint() {
+        return 0;
     }
 }

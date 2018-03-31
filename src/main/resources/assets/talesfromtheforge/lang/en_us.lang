@@ -10,4 +10,12 @@ material.gold.name=Gold
 type.ingot.name=Ingot
 type.nugget.name=Nugget
 
+type.grip.one_handed.name=One-Handed Grip
+type.grip.two_handed.name=Two-Handed Grip
+
+type.pick_head.name=Pickaxe Head
+type.shovel_head.name=Shovel Head
+type.axe_head.name=Axe Head
+type.sword_blade.name=Sword Blade
+
 type.pickaxe.name=Pickaxe
