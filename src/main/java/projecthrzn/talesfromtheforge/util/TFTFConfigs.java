@@ -33,7 +33,6 @@ public class TFTFConfigs {
 
             @Comment("[Default: True]: Should 'Bloomery and Smithery' be enabled?")
             public static boolean bloomerySmitheryNYI = true;
-
         }
 
         public static class Features {
