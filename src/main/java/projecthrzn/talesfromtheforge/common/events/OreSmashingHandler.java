@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import projecthrzn.talesfromtheforge.common.blocks.TFTFBlocks;
 import projecthrzn.talesfromtheforge.common.items.TFTFItems;
-import projecthrzn.talesfromtheforge.common.tool.Tool;
+import projecthrzn.talesfromtheforge.util.TFTFConfigs;
 
 import java.util.List;
 
@@ -27,106 +27,108 @@ public class OreSmashingHandler {
         Block block = event.getState().getBlock();
         int fortune = event.getFortuneLevel();
 
-        if (block == TFTFBlocks.oreCassiterite) {
-            if (heldItem == TFTFItems.HAMMER) {
-                ItemStack cassiteriteROL = new ItemStack(TFTFItems.rawOreLumpCasserite);
-                drops.add(cassiteriteROL);
-                drops.add(cassiteriteROL);
-                drops.add(cassiteriteROL);
-                if (fortune >= 1) {
+        if (TFTFConfigs.TFTFConfig.Modules.oreSmashing) {
+            if (block == TFTFBlocks.oreCassiterite) {
+                if (heldItem == TFTFItems.HAMMER) {
+                    ItemStack cassiteriteROL = new ItemStack(TFTFItems.rawOreLumpCasserite);
                     drops.add(cassiteriteROL);
-                    if (tryPercentage(0.25D)) {
+                    drops.add(cassiteriteROL);
+                    drops.add(cassiteriteROL);
+                    if (fortune >= 1) {
                         drops.add(cassiteriteROL);
-                    }
-                    if (fortune >= 2 && tryPercentage(0.15D)) {
-                        drops.add(cassiteriteROL);
-                    }
-                    if (fortune == 3 && tryPercentage(0.10D)) {
-                        drops.add(cassiteriteROL);
+                        if (tryPercentage(0.25D)) {
+                            drops.add(cassiteriteROL);
+                        }
+                        if (fortune >= 2 && tryPercentage(0.15D)) {
+                            drops.add(cassiteriteROL);
+                        }
+                        if (fortune == 3 && tryPercentage(0.10D)) {
+                            drops.add(cassiteriteROL);
+                        }
                     }
                 }
             }
-        }
 
-        if (block == TFTFBlocks.oreChalcopyrite) {
-            if (heldItem == TFTFItems.HAMMER) {
-                ItemStack chalcopyriteROL = new ItemStack(TFTFItems.rawOreLumpChalcopyrite);
-                drops.add(chalcopyriteROL);
-                drops.add(chalcopyriteROL);
-                drops.add(chalcopyriteROL);
-                if (fortune >= 1) {
+            if (block == TFTFBlocks.oreChalcopyrite) {
+                if (heldItem == TFTFItems.HAMMER) {
+                    ItemStack chalcopyriteROL = new ItemStack(TFTFItems.rawOreLumpChalcopyrite);
                     drops.add(chalcopyriteROL);
-                    if (tryPercentage(0.25D)) {
+                    drops.add(chalcopyriteROL);
+                    drops.add(chalcopyriteROL);
+                    if (fortune >= 1) {
                         drops.add(chalcopyriteROL);
-                    }
-                    if (fortune >= 2 && tryPercentage(0.15D)) {
-                        drops.add(chalcopyriteROL);
-                    }
-                    if (fortune == 3 && tryPercentage(0.10D)) {
-                        drops.add(chalcopyriteROL);
+                        if (tryPercentage(0.25D)) {
+                            drops.add(chalcopyriteROL);
+                        }
+                        if (fortune >= 2 && tryPercentage(0.15D)) {
+                            drops.add(chalcopyriteROL);
+                        }
+                        if (fortune == 3 && tryPercentage(0.10D)) {
+                            drops.add(chalcopyriteROL);
+                        }
                     }
                 }
             }
-        }
 
-        if (block == TFTFBlocks.oreDigenite) {
-            if (heldItem == TFTFItems.HAMMER) {
-                ItemStack digeniteROL = new ItemStack(TFTFItems.rawOreLumpDigenite);
-                drops.add(digeniteROL);
-                drops.add(digeniteROL);
-                drops.add(digeniteROL);
-                if (fortune >= 1) {
+            if (block == TFTFBlocks.oreDigenite) {
+                if (heldItem == TFTFItems.HAMMER) {
+                    ItemStack digeniteROL = new ItemStack(TFTFItems.rawOreLumpDigenite);
                     drops.add(digeniteROL);
-                    if (tryPercentage(0.25D)) {
+                    drops.add(digeniteROL);
+                    drops.add(digeniteROL);
+                    if (fortune >= 1) {
                         drops.add(digeniteROL);
-                    }
-                    if (fortune >= 2 && tryPercentage(0.15D)) {
-                        drops.add(digeniteROL);
-                    }
-                    if (fortune == 3 && tryPercentage(0.10D)) {
-                        drops.add(digeniteROL);
+                        if (tryPercentage(0.25D)) {
+                            drops.add(digeniteROL);
+                        }
+                        if (fortune >= 2 && tryPercentage(0.15D)) {
+                            drops.add(digeniteROL);
+                        }
+                        if (fortune == 3 && tryPercentage(0.10D)) {
+                            drops.add(digeniteROL);
+                        }
                     }
                 }
             }
-        }
 
-        if (block == TFTFBlocks.oreGalena) {
-            if (heldItem == TFTFItems.HAMMER) {
-                ItemStack galenaROL = new ItemStack(TFTFItems.rawOreLumpGalena);
-                drops.add(galenaROL);
-                drops.add(galenaROL);
-                drops.add(galenaROL);
-                if (fortune >= 1) {
+            if (block == TFTFBlocks.oreGalena) {
+                if (heldItem == TFTFItems.HAMMER) {
+                    ItemStack galenaROL = new ItemStack(TFTFItems.rawOreLumpGalena);
                     drops.add(galenaROL);
-                    if (tryPercentage(0.25D)) {
+                    drops.add(galenaROL);
+                    drops.add(galenaROL);
+                    if (fortune >= 1) {
                         drops.add(galenaROL);
-                    }
-                    if (fortune >= 2 && tryPercentage(0.15D)) {
-                        drops.add(galenaROL);
-                    }
-                    if (fortune == 3 && tryPercentage(0.10D)) {
-                        drops.add(galenaROL);
+                        if (tryPercentage(0.25D)) {
+                            drops.add(galenaROL);
+                        }
+                        if (fortune >= 2 && tryPercentage(0.15D)) {
+                            drops.add(galenaROL);
+                        }
+                        if (fortune == 3 && tryPercentage(0.10D)) {
+                            drops.add(galenaROL);
+                        }
                     }
                 }
             }
-        }
 
-        if (block == TFTFBlocks.oreSphalerite) {
-            if (heldItem == TFTFItems.HAMMER) {
-                ItemStack sphaleriteROL = new ItemStack(TFTFItems.rawOreLumpSphalerite);
-                drops.add(sphaleriteROL);
-                drops.add(sphaleriteROL);
-                drops.add(sphaleriteROL);
-                if (fortune >= 1) {
+            if (block == TFTFBlocks.oreSphalerite) {
+                if (heldItem == TFTFItems.HAMMER) {
+                    ItemStack sphaleriteROL = new ItemStack(TFTFItems.rawOreLumpSphalerite);
                     drops.add(sphaleriteROL);
-                    if (tryPercentage(0.25D)) {
+                    drops.add(sphaleriteROL);
+                    drops.add(sphaleriteROL);
+                    if (fortune >= 1) {
                         drops.add(sphaleriteROL);
-                    }
-                    if (fortune >= 2 && tryPercentage(0.15D)) {
-                        drops.add(sphaleriteROL);
-                    }
-                    if (fortune == 3 && tryPercentage(0.10D)) {
-                        drops.add(sphaleriteROL);
+                        if (tryPercentage(0.25D)) {
+                            drops.add(sphaleriteROL);
+                        }
+                        if (fortune >= 2 && tryPercentage(0.15D)) {
+                            drops.add(sphaleriteROL);
+                        }
+                        if (fortune == 3 && tryPercentage(0.10D)) {
+                            drops.add(sphaleriteROL);
+                        }
                     }
                 }
             }

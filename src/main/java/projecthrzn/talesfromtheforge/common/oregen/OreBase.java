@@ -9,9 +9,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.oredict.OreDictionary;
 import projecthrzn.talesfromtheforge.common.blocks.BlockBase;
-import projecthrzn.talesfromtheforge.util.TFTFUtilityMethods;
-
-import static projecthrzn.talesfromtheforge.util.TFTFUtilityMethods.tryPercentage;
 
 public class OreBase extends BlockBase {
 
@@ -24,7 +21,7 @@ public class OreBase extends BlockBase {
         setResistance(5f);
     }
 
-    public void initOreDict(){
+    public void initOreDict() {
         OreDictionary.registerOre(oreName, this);
     }
 
@@ -34,7 +31,7 @@ public class OreBase extends BlockBase {
     }
 
     @Override
-    public OreBase setCreativeTab(CreativeTabs tab){
+    public OreBase setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
     }

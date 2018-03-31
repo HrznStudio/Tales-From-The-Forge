@@ -2,6 +2,7 @@ package projecthrzn.talesfromtheforge.util;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.Config.Comment;
+import net.minecraftforge.common.config.Config.Ignore;
 import net.minecraftforge.common.config.Config.RangeInt;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
@@ -27,7 +28,7 @@ public class TFTFConfigs {
             public static boolean potteryNYI = true;
 
             @Comment("[Default: True]: Should 'Ore Smashing' be enabled?")
-            public static boolean oreSmashingNYI = true;
+            public static boolean oreSmashing = true;
 
             @Comment("[Default: True]: Should the 'Charcoal Pit' and Charcoal-Grade mechanics be enabled?")
             public static boolean charcoalPitNYI = true;
@@ -45,7 +46,7 @@ public class TFTFConfigs {
 
         public static class Compat {
             @Comment("[Default: False]: 'Tinker's Construct' Support")
-            @Config.Ignore //Ignore till after modjam
+            @Ignore //Ignore till after modjam
             public static boolean enableTinkersCompatNYI = false;
         }
 

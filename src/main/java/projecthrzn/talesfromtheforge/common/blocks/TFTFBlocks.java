@@ -3,16 +3,11 @@ package projecthrzn.talesfromtheforge.common.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import projecthrzn.talesfromtheforge.TalesFromTheForge;
-import projecthrzn.talesfromtheforge.common.items.TFTFItems;
 import projecthrzn.talesfromtheforge.common.oregen.OreBase;
-
-import static projecthrzn.talesfromtheforge.common.items.TFTFItems.*;
 
 public class TFTFBlocks {
     public static CreativeTabs tab = TalesFromTheForge.TAB;
@@ -32,7 +27,7 @@ public class TFTFBlocks {
         oreSphalerite.initModel();
     }
 
-    public static void register(IForgeRegistry<Block> registry){
+    public static void register(IForgeRegistry<Block> registry) {
         registry.register(oreCassiterite);
         registry.register(oreChalcopyrite);
         registry.register(oreDigenite);
@@ -40,7 +35,7 @@ public class TFTFBlocks {
         registry.register(oreSphalerite);
     }
 
-    public static void regsiterItemBlocks(IForgeRegistry<Item> registry){
+    public static void regsiterItemBlocks(IForgeRegistry<Item> registry) {
         registry.register(oreCassiterite.createItemBlock());
         registry.register(oreChalcopyrite.createItemBlock());
         registry.register(oreDigenite.createItemBlock());

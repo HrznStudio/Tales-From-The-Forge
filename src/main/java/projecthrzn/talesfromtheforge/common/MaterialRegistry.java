@@ -7,7 +7,7 @@ public class MaterialRegistry {
     }
 
     public static Material getMaterial(String string) {
-        if(string.isEmpty())
+        if (string.isEmpty())
             return Material.COPPER;
         return Material.valueOf(string.toUpperCase());
     }

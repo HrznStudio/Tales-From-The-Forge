@@ -12,7 +12,6 @@ public class Tags {
     public static final String PARTID = "partid";
 
 
-
     public static NBTTagCompound getTagSafe(ItemStack stack) {
         NBTTagCompound tag = stack.getTagCompound();
         if (tag == null) {

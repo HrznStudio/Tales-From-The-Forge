@@ -46,7 +46,7 @@ public class MaterialItem extends Item implements IMaterialItem {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
         Material material = getMaterial(stack);
-        tooltip.add("Material: "+material.getDisplayName());
+        tooltip.add("Material: " + material.getDisplayName());
     }
 
     public ItemStack getStack(Material material) {

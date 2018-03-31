@@ -3,7 +3,6 @@ package projecthrzn.talesfromtheforge.common;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -20,20 +19,6 @@ import static projecthrzn.talesfromtheforge.TalesFromTheForge.logger;
 import static projecthrzn.talesfromtheforge.common.blocks.TFTFBlocks.*;
 
 public class CommonProxy {
-
-    @EventBusSubscriber
-    public static class RegistrationHandling {
-        @SubscribeEvent
-        public static void registerBlocks(RegistryEvent.Register<Block> event) {
-            TFTFBlocks.register(event.getRegistry());
-        }
-
-        @SubscribeEvent
-        public static void registerItems(RegistryEvent.Register<Item> event) {
-            TFTFBlocks.regsiterItemBlocks(event.getRegistry());
-        }
-    }
-
 
     public void preInit(FMLPreInitializationEvent e) {
         if (TFTFConfig.Debug.debug) {
@@ -62,6 +47,19 @@ public class CommonProxy {
     public void serverStart(FMLServerStartingEvent e) {
         if (TFTFConfig.Debug.debug) {
             logger.log(Level.DEBUG, "TFTF: Is Loading During Server Start");
+        }
+    }
+
+    @EventBusSubscriber
+    public static class RegistrationHandling {
+        @SubscribeEvent
+        public static void registerBlocks(RegistryEvent.Register<Block> event) {
+            TFTFBlocks.register(event.getRegistry());
+        }
+
+        @SubscribeEvent
+        public static void registerItems(RegistryEvent.Register<Item> event) {
+            TFTFBlocks.regsiterItemBlocks(event.getRegistry());
         }
     }
 }

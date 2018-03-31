@@ -10,6 +10,6 @@ public class PartGrip extends Part {
 
     @Override
     public boolean canBeMaterial(Material material) {
-        return material==Material.WOOD;
+        return material == Material.WOOD;
     }
 }

@@ -15,7 +15,6 @@ import projecthrzn.talesfromtheforge.common.tool.MaterialItem;
 import projecthrzn.talesfromtheforge.common.tool.Part;
 import projecthrzn.talesfromtheforge.common.tool.Tool;
 import projecthrzn.talesfromtheforge.util.Amounts;
-import projecthrzn.talesfromtheforge.util.TFTFConfigs;
 import projecthrzn.talesfromtheforge.util.TFTFConfigs.TFTFConfig;
 
 @Mod.EventBusSubscriber
@@ -102,15 +101,15 @@ public class TFTFItems {
                 GREAT_HAMMER
         );
 
-        if (TFTFConfig.OreGen.Cassiterite.shouldGenerate){
+        if (TFTFConfig.OreGen.Cassiterite.shouldGenerate) {
             event.getRegistry().register(rawOreLumpCasserite);
         }
 
-        if (TFTFConfig.OreGen.Chalcopyrite.shouldGenerate){
+        if (TFTFConfig.OreGen.Chalcopyrite.shouldGenerate) {
             event.getRegistry().register(rawOreLumpChalcopyrite);
         }
 
-        if (TFTFConfig.OreGen.Digenite.shouldGenerate){
+        if (TFTFConfig.OreGen.Digenite.shouldGenerate) {
             event.getRegistry().register(rawOreLumpDigenite);
         }
 

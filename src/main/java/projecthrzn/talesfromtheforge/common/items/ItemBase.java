@@ -12,7 +12,7 @@ public class ItemBase extends Item {
 
     protected String name;
 
-    public ItemBase(String name){
+    public ItemBase(String name) {
         this.name = name;
         setUnlocalizedName(TFTFConstants.MODID + "." + name);
         setRegistryName(name);
@@ -24,7 +24,7 @@ public class ItemBase extends Item {
     }
 
     @Override
-    public ItemBase setCreativeTab(CreativeTabs tab){
+    public ItemBase setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
     }
