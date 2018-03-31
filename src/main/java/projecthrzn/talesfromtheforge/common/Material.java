@@ -6,6 +6,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public enum Material implements IStringSerializable {
+    STONE,
+    FLINT,
     COPPER,
     BRONZE,
     IRON,

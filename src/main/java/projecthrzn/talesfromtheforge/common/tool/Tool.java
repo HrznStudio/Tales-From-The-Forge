@@ -1,14 +1,18 @@
 package projecthrzn.talesfromtheforge.common.tool;
 
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import projecthrzn.talesfromtheforge.TalesFromTheForge;
 import projecthrzn.talesfromtheforge.common.IPart;
+import projecthrzn.talesfromtheforge.common.Material;
 import projecthrzn.talesfromtheforge.common.MaterialRegistry;
 import projecthrzn.talesfromtheforge.util.TFTFConstants;
 import projecthrzn.talesfromtheforge.util.Tags;
@@ -40,6 +44,41 @@ public class Tool extends Item {
                     tooltip.add("Part id: " + ((NBTTagCompound) base).getString(Tags.PARTID));
                     tooltip.add(" - Material: " + MaterialRegistry.getMaterial(((NBTTagCompound) base).getString(Tags.MATERIAL)));
                 }
+            }
+        }
+    }
+
+    public void addPart(ItemStack tool, ItemStack part) {
+        if (part.getTagCompound() == null)
+            return;
+        NBTTagCompound compound = Tags.getTagSafe(tool);
+        if (!compound.hasKey(Tags.PARTS, Constants.NBT.TAG_LIST)) {
+            compound.setTag(Tags.PARTS, new NBTTagList());
+        }
+        NBTTagList list = compound.getTagList(Tags.PARTS, Constants.NBT.TAG_COMPOUND);
+        list.appendTag(part.getTagCompound().copy());
+    }
+
+    public ItemStack getStack(ItemStack... parts) {
+        ItemStack stack = new ItemStack(this);
+        for (ItemStack part : parts) {
+            addPart(stack, part);
+        }
+        return stack;
+    }
+
+
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+        if (isInCreativeTab(tab)) {
+            for (Material material : MaterialRegistry.getAllMaterials()) {
+                ItemStack stack = new ItemStack(this);
+                for (IPart part : parts) {
+                    if (!part.canBeMaterial(material))
+                        continue;
+                    addPart(stack, part.getStack(material));
+                }
+                items.add(stack);
             }
         }
     }

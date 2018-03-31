@@ -23,32 +23,48 @@ public class TFTFItems {
 
     public static MaterialItem INGOT;
     public static MaterialItem NUGGET;
-    public static ItemGrip GRIP;
 
     public static Part PICK_HEAD;
     public static Part SHOVEL_HEAD;
     public static Part AXE_HEAD;
-    public static Part SWORD_BLADE;
+    public static Part SHORT_BLADE;
+    public static Part LONG_BLADE;
+    public static Part HAMMER_HEAD;
+    public static Part ONE_HANDED_GUARD;
+    public static Part TWO_HANDED_GUARD;
+    public static Part ONE_HANDED_GRIP;
+    public static Part TWO_HANDED_GRIP;
 
     public static Tool PICKAXE;
     public static Tool SHOVEL;
     public static Tool AXE;
-    public static Tool SWORD;
+    public static Tool DAGGER;
+    public static Tool LONGSWORD;
+    public static Tool HAMMER;
+    public static Tool GREAT_HAMMER;
 
     public static void preInit() {
         INGOT = new MaterialItem("ingot");
         NUGGET = new MaterialItem("nugget");
-        GRIP = new ItemGrip("grip");
 
         PICK_HEAD = new Part("pick_head", Amounts.INGOT.getAmount(3));
         SHOVEL_HEAD = new Part("shovel_head", Amounts.INGOT.getAmount(2));
         AXE_HEAD = new Part("axe_head", Amounts.INGOT.getAmount(3));
-        SWORD_BLADE = new Part("sword_blade", Amounts.INGOT.getAmount(3));
+        SHORT_BLADE = new Part("short_blade", Amounts.INGOT.getAmount(1));
+        LONG_BLADE = new Part("long_blade", Amounts.INGOT.getAmount(2));
+        HAMMER_HEAD = new Part("hammer_head", Amounts.INGOT.getAmount(4));
+        ONE_HANDED_GUARD = new Part("one_handed_guard", Amounts.INGOT.getAmount(1));
+        TWO_HANDED_GUARD = new Part("two_handed_guard", Amounts.INGOT.getAmount(1));
+        ONE_HANDED_GRIP = new Part("one_handed_grip", Amounts.INGOT.getAmount(1));
+        TWO_HANDED_GRIP = new Part("two_handed_grip", Amounts.INGOT.getAmount(1));
 
-        PICKAXE = new Tool("pickaxe", PICK_HEAD);
-        SHOVEL = new Tool("shovel", SHOVEL_HEAD);
-        AXE = new Tool("axe", AXE_HEAD);
-        SWORD = new Tool("sword", SWORD_BLADE);
+        PICKAXE = new Tool("pickaxe", PICK_HEAD, TWO_HANDED_GRIP);
+        SHOVEL = new Tool("shovel", SHOVEL_HEAD, TWO_HANDED_GRIP);
+        AXE = new Tool("axe", AXE_HEAD, TWO_HANDED_GRIP);
+        DAGGER = new Tool("dagger", LONG_BLADE, ONE_HANDED_GUARD, ONE_HANDED_GRIP);
+        LONGSWORD = new Tool("longsword", LONG_BLADE, TWO_HANDED_GUARD, TWO_HANDED_GRIP);
+        HAMMER = new Tool("hammer", HAMMER_HEAD, ONE_HANDED_GRIP);
+        GREAT_HAMMER = new Tool("great_hammer", HAMMER_HEAD, ONE_HANDED_GRIP);
     }
 
     @SubscribeEvent
@@ -56,17 +72,24 @@ public class TFTFItems {
         event.getRegistry().registerAll(
                 INGOT,
                 NUGGET,
-                GRIP,
 
                 PICK_HEAD,
                 SHOVEL_HEAD,
                 AXE_HEAD,
-                SWORD_BLADE,
+                LONG_BLADE,
+                SHORT_BLADE,
+                ONE_HANDED_GUARD,
+                TWO_HANDED_GUARD,
+                ONE_HANDED_GRIP,
+                TWO_HANDED_GRIP,
 
                 PICKAXE,
                 SHOVEL,
                 AXE,
-                SWORD
+                DAGGER,
+                LONGSWORD,
+                HAMMER,
+                GREAT_HAMMER
         );
         if (TFTFConfigs.TFTFConfig.Features.disableVanilla) {
             event.getRegistry().registerAll(
@@ -104,31 +127,7 @@ public class TFTFItems {
                     new DeprecatedItemOverride(Items.WOODEN_SWORD),
                     new DeprecatedItemOverride(Items.GOLDEN_SWORD),
                     new DeprecatedItemOverride(Items.STONE_SWORD),
-                    new DeprecatedItemOverride(Items.DIAMOND_SWORD),
-
-                    new DeprecatedItemOverride(Items.IRON_HELMET),
-                    new DeprecatedItemOverride(Items.GOLDEN_HELMET),
-                    new DeprecatedItemOverride(Items.CHAINMAIL_HELMET),
-                    new DeprecatedItemOverride(Items.DIAMOND_HELMET),
-                    new DeprecatedItemOverride(Items.LEATHER_HELMET),
-
-                    new DeprecatedItemOverride(Items.IRON_CHESTPLATE),
-                    new DeprecatedItemOverride(Items.GOLDEN_CHESTPLATE),
-                    new DeprecatedItemOverride(Items.CHAINMAIL_CHESTPLATE),
-                    new DeprecatedItemOverride(Items.DIAMOND_CHESTPLATE),
-                    new DeprecatedItemOverride(Items.LEATHER_CHESTPLATE),
-
-                    new DeprecatedItemOverride(Items.IRON_LEGGINGS),
-                    new DeprecatedItemOverride(Items.GOLDEN_LEGGINGS),
-                    new DeprecatedItemOverride(Items.CHAINMAIL_LEGGINGS),
-                    new DeprecatedItemOverride(Items.DIAMOND_LEGGINGS),
-                    new DeprecatedItemOverride(Items.LEATHER_LEGGINGS),
-
-                    new DeprecatedItemOverride(Items.IRON_BOOTS),
-                    new DeprecatedItemOverride(Items.GOLDEN_BOOTS),
-                    new DeprecatedItemOverride(Items.CHAINMAIL_BOOTS),
-                    new DeprecatedItemOverride(Items.DIAMOND_BOOTS),
-                    new DeprecatedItemOverride(Items.LEATHER_BOOTS)
+                    new DeprecatedItemOverride(Items.DIAMOND_SWORD)
             );
         }
     }
@@ -145,14 +144,6 @@ public class TFTFItems {
             ModelLoader.setCustomModelResourceLocation(NUGGET, material.meta(),
                     new ModelResourceLocation(
                             NUGGET.getRegistryName().toString(),
-                            "type=" + material.getName()
-                    )
-            );
-        }
-        for (GripType material : GripType.ENABLED) {
-            ModelLoader.setCustomModelResourceLocation(GRIP, material.meta(),
-                    new ModelResourceLocation(
-                            GRIP.getRegistryName().toString(),
                             "type=" + material.getName()
                     )
             );
